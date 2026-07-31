@@ -1,90 +1,97 @@
 <!DOCTYPE html>
-
-
 <html lang="pt-br">
 
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Blog</title>
-
+    <title>Blog do Brayansouza</title>
     <style>
-
-        header{
-
-            background-color: #5AFF47;
-
-            color: #5A0092;
-
+        header {
+            background-color: #FFD700; /* Amarelo */
+            color: #FF4500; /* Laranja escuro */
             text-align: center;
-
             max-width: 800px;
-
             margin: 0 auto;
-
             padding: 16px;
-
         }
 
-        main{
-
-            background-color: #5A0092;
-
-            color: #5AFF47;
-
+        main {
+            background-color: #FF8C00; /* Laranja */
+            color: #FFF8DC; /* Texto claro para leitura perfeita */
             max-width: 800px;
-
             margin: 0 auto;
-
             padding: 16px;
+        }
 
-           }
+        article {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente a imagem e o texto */
+            margin-bottom: 20px; /* Dá um espaço entre os posts */
+        }
 
-            img{
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px; /* Dá um espaço entre a imagem e o texto */
+            border-radius: 8px;
+        }
 
-               width: 80px;
+        .artigo-autor {
+            font-weight: bold;
+        }
 
-               height: 80px;
-
-            }
-
+        button {
+            background-color: #FFD700; /* Amarelo */
+            border: none;
+            color: #D2691E; /* Laranja escuro */
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
-
 </head>
 
-
 <body>
-
     <header>
-
         <h1>Brayansouza</h1>
-
         <p>vou falar sobre minha vida</p>
-
     </header>
 
-
     <main>
-
-        <img src="brayansouza.png" alt="
-
-        <h2>Bem-Vindos ao meu mundo!</h2>
-
-        <p>Por: brayansouza</p>
-
-        <p>Fala, galera! vou mostar um pouco da minha rotina!</p>
-
-
-<p>fala galera vou mostrar um pouco da minha rotina do dia a dia,nos sabados eu acordo 6:00 da manha para ir trabalhar chego la tomo meu cafe </p>
-
+        <article>
+            <img src="brayansouza.png" alt="Foto de perfil de Brayansouza.">
+            <div>
+                <h2>Bem-Vindos ao meu mundo!</h2>
+                <p class="artigo-autor">Por: brayansouza</p>
+                <p>Fala, galera! vou mostar um pouco da minha rotina do dia a dia, nos sábados eu acordo 6:00 da manhã para ir trabalhar, chego lá e tomo meu café...</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
     </main>
-
 </body>
 
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false) {
+                texto.textContent++;
+                curtiu = true;
+            } else {
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    });
+</script>
 
 </html>
-
